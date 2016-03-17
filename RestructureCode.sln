@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestructureCode", "RestructureCode\RestructureCode.csproj", "{30162A04-E3EE-4C02-ABE3-B09E20E2E35B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPG_Characters", "RPG_Characters\RPG_Characters.csproj", "{041A4F46-A7F2-4867-8175-ADC74C0CAB0C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30162A04-E3EE-4C02-ABE3-B09E20E2E35B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30162A04-E3EE-4C02-ABE3-B09E20E2E35B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30162A04-E3EE-4C02-ABE3-B09E20E2E35B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30162A04-E3EE-4C02-ABE3-B09E20E2E35B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{041A4F46-A7F2-4867-8175-ADC74C0CAB0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{041A4F46-A7F2-4867-8175-ADC74C0CAB0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{041A4F46-A7F2-4867-8175-ADC74C0CAB0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{041A4F46-A7F2-4867-8175-ADC74C0CAB0C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
