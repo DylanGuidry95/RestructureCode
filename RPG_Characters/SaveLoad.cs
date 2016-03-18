@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Runtime.Serialization.Formatters.Soap;
 using System.IO;
 using System.Collections;
-
+using RPG_Characters;
 namespace UserProfileApplication
 {
     /// <summary>
@@ -35,7 +35,7 @@ namespace UserProfileApplication
         /// <param name="t">Data we are passing in to be serialized</param>
         public void Serialize(string s, T t)
         {
-            using (FileStream fs = File.Create(@"..\..\Saved_Files\" + s + ".xml")) //Creates a FileStream using information from the file we created
+            using (FileStream fs = File.Create(Program.SaveDataDirectory + s + ".xml")) //Creates a FileStream using information from the file we created
             {
                 SoapFormatter serializer = new SoapFormatter(); //Creates a new BinaryFormatter to give us access to the Serialize function
                 //We call the Serialize method and pass in the FileStream we created and the data inside of the object we passed into the function
@@ -59,7 +59,7 @@ namespace UserProfileApplication
         public T Deserialize(string s)
         {
             T t; //We will use the as the return value
-            using (FileStream fs = File.OpenRead(@"..\..\Saved_Files\" + s)) //Same process as Serialize but instead of create we use OpenRead
+            using (FileStream fs = File.OpenRead(s)) //Same process as Serialize but instead of create we use OpenRead
             {
                 SoapFormatter deserializer = new SoapFormatter(); //Creates a new binaryFormatter that will give us access to the Deseralize function
                 //We then call the Deserialize method and give it the arguments of the FileStream we created that contains all the data inside of the file
@@ -72,17 +72,23 @@ namespace UserProfileApplication
             return t; //We then return t
         }
 
-        public ArrayList FileNames(string path)
+        /// <summary>
+        /// Searches the designated file directory and all sub directories for all files
+        /// that are saved in an XML format and adds them to a temporary list that we will 
+        /// use as the return value whe the function is called 
+        /// </summary>
+        /// <returns> List of strings that we use to stroe all of the file paths for user created items </returns>
+        public List<string> FileNames()
         {
-            ArrayList temp = new ArrayList();
-            foreach(string s in Directory.GetFiles(@"..\..\Saved_Files\" + path))
+            List<string> temp = new List<string>(); //Data type to store our return value
+            //Loops through each of the strings located in the directory and subdirectories of
+            //the designated path. In this instance we are searching for files located at or below the Save_Files
+            //Directory that are saved in an XML format and then adds those paths to our retrun value
+            foreach (string s in Directory.GetFiles(Program.SaveDataDirectory, "*.xml", SearchOption.AllDirectories))
             {
-                if(s.Contains(".xml"))
-                {
-                    string[] t = s.Split('\\');
-                    temp.Add(t[4]);
-                }
+                temp.Add(s);
             }
+            //Returns are populated list with all of our file paths
             return temp;
         }
     }

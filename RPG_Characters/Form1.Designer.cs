@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Characters");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Weapons");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Classes");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Races");
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Armor");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Characters");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Weapons");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Classes");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Races");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Armor");
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,38 +81,38 @@
             this.armorToolStripMenuItem,
             this.weaponToolStripMenuItem});
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.newToolStripMenuItem.Text = "&New";
             this.newToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.newToolStripMenuItem_DropDownItemClicked);
             // 
             // characterToolStripMenuItem
             // 
             this.characterToolStripMenuItem.Name = "characterToolStripMenuItem";
-            this.characterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.characterToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.characterToolStripMenuItem.Text = "Character";
             // 
             // classToolStripMenuItem
             // 
             this.classToolStripMenuItem.Name = "classToolStripMenuItem";
-            this.classToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.classToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.classToolStripMenuItem.Text = "Class/Race";
             // 
             // armorToolStripMenuItem
             // 
             this.armorToolStripMenuItem.Name = "armorToolStripMenuItem";
-            this.armorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.armorToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.armorToolStripMenuItem.Text = "Armor";
             // 
             // weaponToolStripMenuItem
             // 
             this.weaponToolStripMenuItem.Name = "weaponToolStripMenuItem";
-            this.weaponToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.weaponToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.weaponToolStripMenuItem.Text = "Weapon";
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.closeToolStripMenuItem.Text = "&Close";
             // 
             // windowToolStripMenuItem
@@ -135,29 +135,30 @@
             this.Creations.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Creations.Location = new System.Drawing.Point(4, 3);
             this.Creations.Name = "Creations";
-            treeNode16.Name = "Characters";
-            treeNode16.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode16.Text = "Characters";
-            treeNode17.Name = "Weapons";
-            treeNode17.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode17.Text = "Weapons";
-            treeNode18.Name = "Classes";
-            treeNode18.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode18.Text = "Classes";
-            treeNode19.Name = "Races";
-            treeNode19.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode19.Text = "Races";
-            treeNode20.Name = "Armor";
-            treeNode20.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode20.Text = "Armor";
+            treeNode1.Name = "Characters";
+            treeNode1.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode1.Text = "Characters";
+            treeNode2.Name = "Weapons";
+            treeNode2.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode2.Text = "Weapons";
+            treeNode3.Name = "Classes";
+            treeNode3.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode3.Text = "Classes";
+            treeNode4.Name = "Races";
+            treeNode4.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode4.Text = "Races";
+            treeNode5.Name = "Armor";
+            treeNode5.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode5.Text = "Armor";
             this.Creations.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode16,
-            treeNode17,
-            treeNode18,
-            treeNode19,
-            treeNode20});
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4,
+            treeNode5});
             this.Creations.Size = new System.Drawing.Size(201, 426);
             this.Creations.TabIndex = 0;
+            this.Creations.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.Creations_NodeMouseClick);
             // 
             // Preview
             // 

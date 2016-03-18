@@ -29,8 +29,8 @@ namespace RestructureCode
         private int m_Level; //Level of the object
         private int m_MaxResource; //Max amout of ability resource the charater can have
         private int m_CurrentResource; //Amout of abilty resource the character has
-        private IBaseStats m_Race; //Race of the character
-        private IBaseStats m_Class; //Class of the character
+        private JobsAndRaces m_Race; //Race of the character
+        private JobsAndRaces m_Class; //Class of the character
         
         //Implementation of the IBaseStats interface
         public int Intelligence { get { return m_Int; } }
@@ -47,11 +47,11 @@ namespace RestructureCode
         public int Level { get { return m_Level; } }
         public int MaxResource { get { return m_MaxResource; } }
         public int Resource { get { return m_CurrentResource; } }
-        public IBaseStats CharRace { get { return m_Race; } }
-        public IBaseStats CharClass { get { return m_Class; } }
+        public JobsAndRaces CharRace { get { return m_Race; } }
+        public JobsAndRaces CharClass { get { return m_Class; } }
 
         //Constructor to be called when want to create a new Character
-        public Character(string n, int i, int s, int d, int con, int w, int cha ,IBaseStats race, IBaseStats job)
+        public Character(string n, int i, int s, int d, int con, int w, int cha , JobsAndRaces race, JobsAndRaces job)
         {
             m_Name = n;
             m_Int = i;
@@ -73,23 +73,23 @@ namespace RestructureCode
         /// </summary>
         public void GenerateStats()
         {
-            //m_Int += m_Race.Intelligence;
-            //m_Int += m_Class.Intelligence;
-            //
-            //m_Str += m_Race.Strength;
-            //m_Str += m_Class.Strength;
-            //
-            //m_Dex += m_Race.Dexterity;
-            //m_Dex += m_Class.Dexterity;
-            //
-            //m_Con += m_Race.Constitution;
-            //m_Con += m_Class.Constitution;
-            //
-            //m_Wis += m_Race.Wisdom;
-            //m_Wis += m_Class.Wisdom;
-            //
-            //m_Cha += m_Race.Charisma;
-            //m_Cha += m_Class.Charisma;
+            m_Int += m_Race.Intelligence;
+            m_Int += m_Class.Intelligence;
+
+            m_Str += m_Race.Strength;
+            m_Str += m_Class.Strength;
+
+            m_Dex += m_Race.Dexterity;
+            m_Dex += m_Class.Dexterity;
+
+            m_Con += m_Race.Constitution;
+            m_Con += m_Class.Constitution;
+
+            m_Wis += m_Race.Wisdom;
+            m_Wis += m_Class.Wisdom;
+
+            m_Cha += m_Race.Charisma;
+            m_Cha += m_Class.Charisma;
 
             m_MaxHP = m_Con + m_Race.Constitution + m_Class.Constitution;
         }

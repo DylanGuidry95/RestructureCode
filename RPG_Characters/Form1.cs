@@ -15,11 +15,11 @@ namespace RPG_Characters
 {    
     public partial class Form1 : Form
     {
-        public ArrayList Characters = new ArrayList();
-        public ArrayList Races = new ArrayList();
-        public ArrayList Classes = new ArrayList();
+        public List<Character> Characters = new List<Character>();
+        public List<JobsAndRaces> Races = new List<JobsAndRaces>();
+        public List<JobsAndRaces> Classes = new List<JobsAndRaces>();
 
-        ArrayList Strings = new ArrayList();
+        List<string> FilePaths = new List<string>();
 
         SaveLoad<ArrayList> _SaveLoad = new SaveLoad<ArrayList>();
         SaveLoad<Character> _CharLoadSave = new SaveLoad<Character>();
@@ -58,44 +58,48 @@ namespace RPG_Characters
                 case "Armor":
                     break;
                 case "Class/Race":
-                    Class_Race_Creation classForm = new Class_Race_Creation();
+                    Class_Race_Creation classForm = new Class_Race_Creation(this);
                     classForm.MdiParent = this;
                     classForm.Show();
                     break;
             }
         }
 
-        private void GetItems()
+        public void GetSavedItems()
         {
-            Strings.Add(_SaveLoad.FileNames("Characters"));
-            Strings.Add(_SaveLoad.FileNames("Races"));
-            Strings.Add(_SaveLoad.FileNames("Classes"));
+            FilePaths = _SaveLoad.FileNames();
+            Characters = new List<Character>();
+            Classes = new List<JobsAndRaces>();
+            Races = new List<JobsAndRaces>();
 
-            foreach (string s in Strings)
+            foreach (string s in FilePaths)
             {
                 if (s.Contains("Characters"))
                 {
-                    Characters.Add(_CharLoadSave.Deserialize("Characters" + s));
+                    Characters.Add(_CharLoadSave.Deserialize(s));
                 }
 
                 if (s.Contains("Races"))
                 {
-                    Races.Add(_JobRaceSaveLoad.Deserialize("Races" + s));
+                    Races.Add(_JobRaceSaveLoad.Deserialize(s));
                 }
                 if (s.Contains("Classes"))
                 {
-                    Classes.Add(_JobRaceSaveLoad.Deserialize("Classes" + s));
+                    Classes.Add(_JobRaceSaveLoad.Deserialize(s));                  
                 }
-            }
-
-            AddItems();
+            }   
         }
 
-        private void AddItems()
+        public void AddItems(string type, string name)
+        {
+            Creations.Nodes[type].Nodes.Add(name);     
+        }
+
+        void GenCreations()
         {
             foreach (Character c in Characters)
             {
-                Creations.Nodes["Character"].Nodes.Add(c.Name);
+                Creations.Nodes["Characters"].Nodes.Add(c.Name);
             }
             foreach (JobsAndRaces jc in Races)
             {
@@ -109,7 +113,52 @@ namespace RPG_Characters
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            GetItems();
+            GetSavedItems();
+            GenCreations();
+        }
+
+        private void Creations_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            foreach(Character c in Characters)
+            {
+                if(c.Name == e.Node.Text)
+                {
+                    CharPreview.Text = "";
+                    CharPreview.Text += "Name: " + c.Name + "\n" + 
+                        "Class: " + c.CharClass.Name + "\n" +
+                        "Race: " + c.CharRace.Name;
+                }
+            }
+
+            foreach (JobsAndRaces c in Classes)
+            {
+                if (c.Name == e.Node.Text)
+                {
+                    CharPreview.Text = "";
+                    CharPreview.Text += "Name: " + c.Name + "\n" +
+                        "Int Modifier: " + c.Intelligence + "\n" + 
+                        "Str Modifier: " + c.Strength + "\n" +
+                        "Dex Modifier: " + c.Dexterity + "\n" +
+                        "Wis Modifier: " + c.Wisdom + "\n" +
+                        "Cha Modifier: " + c.Charisma + "\n" +
+                        "Con Modifier: " + c.Constitution;
+                }
+            }
+
+            foreach (JobsAndRaces c in Races)
+            {
+                if (c.Name == e.Node.Text)
+                {
+                    CharPreview.Text = "";
+                    CharPreview.Text += "Name: " + c.Name + "\n" +
+                        "Int Modifier: " + c.Intelligence + "\n" +
+                        "Str Modifier: " + c.Strength + "\n" +
+                        "Dex Modifier: " + c.Dexterity + "\n" +
+                        "Wis Modifier: " + c.Wisdom + "\n" +
+                        "Cha Modifier: " + c.Charisma + "\n" +
+                        "Con Modifier: " + c.Constitution;
+                }
+            }
         }
     }
 }

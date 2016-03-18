@@ -26,8 +26,8 @@ namespace Interfaces
         int Level { get; } //Gets the current level of the object
         int MaxResource { get; }
         int Resource { get; }
-        IBaseStats CharClass { get; }
-        IBaseStats CharRace { get; }
+        JobsAndRaces CharClass { get; }
+        JobsAndRaces CharRace { get; }
 
         void GenerateStats();
     }

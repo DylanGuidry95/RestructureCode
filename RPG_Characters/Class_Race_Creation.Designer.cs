@@ -52,6 +52,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.SaveInfo = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.Save_Return = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -177,6 +179,11 @@
             0,
             0,
             0});
+            this.chaMod.Minimum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            -2147483648});
             this.chaMod.Name = "chaMod";
             this.chaMod.Size = new System.Drawing.Size(43, 20);
             this.chaMod.TabIndex = 11;
@@ -189,6 +196,11 @@
             0,
             0,
             0});
+            this.wisMod.Minimum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            -2147483648});
             this.wisMod.Name = "wisMod";
             this.wisMod.Size = new System.Drawing.Size(43, 20);
             this.wisMod.TabIndex = 10;
@@ -201,6 +213,11 @@
             0,
             0,
             0});
+            this.intMod.Minimum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            -2147483648});
             this.intMod.Name = "intMod";
             this.intMod.Size = new System.Drawing.Size(42, 20);
             this.intMod.TabIndex = 9;
@@ -213,6 +230,11 @@
             0,
             0,
             0});
+            this.dexMod.Minimum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            -2147483648});
             this.dexMod.Name = "dexMod";
             this.dexMod.Size = new System.Drawing.Size(42, 20);
             this.dexMod.TabIndex = 8;
@@ -225,6 +247,11 @@
             0,
             0,
             0});
+            this.conMod.Minimum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            -2147483648});
             this.conMod.Name = "conMod";
             this.conMod.Size = new System.Drawing.Size(42, 20);
             this.conMod.TabIndex = 7;
@@ -237,6 +264,11 @@
             0,
             0,
             0});
+            this.strMod.Minimum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            -2147483648});
             this.strMod.Name = "strMod";
             this.strMod.Size = new System.Drawing.Size(42, 20);
             this.strMod.TabIndex = 6;
@@ -319,13 +351,23 @@
             // 
             // SaveInfo
             // 
-            this.SaveInfo.Location = new System.Drawing.Point(217, 28);
+            this.SaveInfo.Location = new System.Drawing.Point(217, 29);
             this.SaveInfo.Name = "SaveInfo";
-            this.SaveInfo.Size = new System.Drawing.Size(75, 23);
+            this.SaveInfo.Size = new System.Drawing.Size(91, 23);
             this.SaveInfo.TabIndex = 12;
             this.SaveInfo.Text = "Save";
             this.SaveInfo.UseVisualStyleBackColor = true;
             this.SaveInfo.Click += new System.EventHandler(this.SaveInfo_Click);
+            // 
+            // Save_Return
+            // 
+            this.Save_Return.Location = new System.Drawing.Point(217, 58);
+            this.Save_Return.Name = "Save_Return";
+            this.Save_Return.Size = new System.Drawing.Size(91, 23);
+            this.Save_Return.TabIndex = 13;
+            this.Save_Return.Text = "Save and Close";
+            this.Save_Return.UseVisualStyleBackColor = true;
+            this.Save_Return.Click += new System.EventHandler(this.Save_Return_Click);
             // 
             // Class_Race_Creation
             // 
@@ -333,6 +375,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(399, 312);
+            this.Controls.Add(this.Save_Return);
             this.Controls.Add(this.SaveInfo);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
@@ -340,6 +383,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Text = "Class_Race_Creation";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Class_Race_Creation_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -383,5 +427,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button SaveInfo;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Button Save_Return;
     }
 }

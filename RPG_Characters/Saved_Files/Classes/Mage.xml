@@ -1,13 +1,13 @@
 <SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
 <SOAP-ENV:Body>
 <a1:JobsAndRaces id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/RestructureCode/RestructureCode%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
-<m_IntMod>0</m_IntMod>
-<m_StrMod>3</m_StrMod>
-<m_DexMod>1</m_DexMod>
-<m_ConMod>2</m_ConMod>
-<m_WisMod>0</m_WisMod>
+<m_IntMod>3</m_IntMod>
+<m_StrMod>0</m_StrMod>
+<m_DexMod>0</m_DexMod>
+<m_ConMod>0</m_ConMod>
+<m_WisMod>3</m_WisMod>
 <m_ChaMod>2</m_ChaMod>
-<m_RaceName id="ref-3">Warrior</m_RaceName>
+<m_RaceName id="ref-3">Mage</m_RaceName>
 </a1:JobsAndRaces>
 </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>
