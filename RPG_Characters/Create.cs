@@ -12,18 +12,31 @@ using RestructureCode;
 
 namespace RPG_Characters
 {
+    /// <summary>
+    /// This form is used to create new Characters 
+    /// </summary>
     public partial class Create : Form
     {
+        //Refrence to the parent of this form
         Form1 parent = new Form1();
 
+        //Keeps track of our rolls for our stats
         List<int> StatRolls;
 
+        //SaveLoad object we use to save data of type Character
         SaveLoad<Character> _SaveLoad = new SaveLoad<Character>();
 
+        //The character we are creating
         Character CreatedCharacter;
 
+        //Keeps track of all the ComboBoxes that contain values we will assign to our character
+        //when we create it
         List<ComboBox> StatValues = new List<ComboBox>();
 
+        /// <summary>
+        /// Contructor 
+        /// </summary>
+        /// <param name="p">Parent form</param>
         public Create(Form1 p)
         {
             parent = p;
@@ -42,6 +55,14 @@ namespace RPG_Characters
             StatValues.Add(ChaStat);
         }
 
+        /// <summary>
+        /// Generates randow number we will use to populate
+        /// the collection of our StatValues combobxes to allow 
+        /// the creator to then assign the values to the characters 
+        /// stats
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StatsRoll_Click(object sender, EventArgs e)
         {
             StatRolls = new List<int>();
@@ -59,6 +80,9 @@ namespace RPG_Characters
             AddStats();
         }
 
+        /// <summary>
+        /// Adds the values of our rolls to the StatValues list
+        /// </summary>
         private void AddStats()
         {
             foreach(int i in StatRolls)
@@ -72,11 +96,22 @@ namespace RPG_Characters
             }
         }
 
+        /// <summary>
+        /// Called when the form is closed and tells our parent form to turn
+        /// the elements we turned off back on
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Create_FormClosing(object sender, FormClosingEventArgs e)
         {
             parent.GetSavedItems();
         }
 
+        /// <summary>
+        /// Saves our newly created character
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SaveInfo_Click(object sender, EventArgs e)
         {
             _SaveLoad.Serialize("/Characters/" + CreatedCharacter.Name, CreatedCharacter);
@@ -84,6 +119,12 @@ namespace RPG_Characters
             parent.AddItems("Characters", CreatedCharacter.Name);
         }
 
+        /// <summary>
+        /// Creates our character based on the values we assigned in the various input fields
+        /// the user can assign data to.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CharCreate_Click(object sender, EventArgs e)
         {
             CreatedCharacter = new Character(FirstName.Text + "_" + LastName.Text, (int)IntStat.SelectedItem, (int)StrStat.SelectedItem,
@@ -103,6 +144,11 @@ namespace RPG_Characters
             SaveInfo.Visible = true;
         }
 
+        /// <summary>
+        /// Saves our newly created and also closes this form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Save_return_Click(object sender, EventArgs e)
         {
             _SaveLoad.Serialize("/Characters/" + CreatedCharacter.Name, CreatedCharacter);

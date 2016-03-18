@@ -12,13 +12,22 @@ using System.Windows.Forms;
 
 namespace RPG_Characters
 {
+    /// <summary>
+    /// Used to create new races and classes
+    /// </summary>
     public partial class Class_Race_Creation : Form
     {
+        //SaveLoad object to of type JobsAndRaces
         SaveLoad<JobsAndRaces> _SaveLoad = new SaveLoad<JobsAndRaces>();
+        //Parent of this form
         Form1 parent = new Form1();
-
+        //Class or race we are trying to create
         JobsAndRaces newClass;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="p">Parent form</param>
         public Class_Race_Creation(Form1 p)
         {
             parent = p;
@@ -30,6 +39,11 @@ namespace RPG_Characters
 
         }
 
+        /// <summary>
+        /// Saves our newly created Class or Race
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SaveInfo_Click(object sender, EventArgs e)
         {
             if (CreateClass.Checked == true)
@@ -64,6 +78,11 @@ namespace RPG_Characters
 
         }
 
+        /// <summary>
+        /// Saves out newly created race or class and closes the form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Save_Return_Click(object sender, EventArgs e)
         {
             newClass = new JobsAndRaces(Name.Text, (int)intMod.Value, (int)strMod.Value, (int)dexMod.Value,
@@ -90,6 +109,10 @@ namespace RPG_Characters
             }
         }
 
+        /// <summary>
+        /// Checks to see if an items of the same name as the one being created exists
+        /// </summary>
+        /// <returns></returns>
         private bool Exists()
         {
             foreach(JobsAndRaces c in parent.Classes)
