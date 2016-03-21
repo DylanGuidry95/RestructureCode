@@ -8,7 +8,7 @@ namespace RPG_Characters
 {
     static class Program
     {
-        public static string SaveDataDirectory = @"C:\Users\dylan.guidry\Documents\My Games\D&D_Creator";
+        public static string SaveDataDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/My Games/D&D_Creator";
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -23,6 +23,7 @@ namespace RPG_Characters
 
         static void CreateApplicationDirectory()
         {
+   
             if (!Directory.Exists(SaveDataDirectory))
             {
                 Directory.CreateDirectory(SaveDataDirectory);
@@ -32,7 +33,6 @@ namespace RPG_Characters
                 Directory.CreateDirectory(SaveDataDirectory + "/Classes");
                 Directory.CreateDirectory(SaveDataDirectory + "/Races");
             }
-
         }
     }
 }
